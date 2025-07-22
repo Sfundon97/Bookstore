@@ -22,7 +22,7 @@ async function loadBooks() {
               edges {
                 node {
                   title
-                  author {
+                  authors {
                     names
                   }
                 }
@@ -40,7 +40,7 @@ async function loadBooks() {
 
     books.forEach(({ node }) => {
       const item = document.createElement('li');
-      item.textContent = `"${node.title}" by ${node.author?.names || 'Unknown Author'}`;
+      item.textContent = `"${node.title}" by ${node.authors?.names || 'Unknown Author'}`;
       bookList.appendChild(item);
     });
 
