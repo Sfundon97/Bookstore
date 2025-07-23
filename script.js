@@ -6,7 +6,7 @@ const viewBooksBtn = document.getElementById('viewBooksBtn');
 const GRAPHQL_ENDPOINT = 'https://vtmjaouvabfkxzuljnsx.supabase.co/graphql/v1';
 const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ0bWphb3V2YWJma3h6dWxqbnN4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTIwNDgwNjQsImV4cCI6MjA2NzYyNDA2NH0.KhAyEvaJeA1dtbN28Z9nxwKbyQ5-_5y4TiU93usRdts';
 
-// 📚 Load and display books
+//Load and display books
 async function loadBooks() {
   try {
     const res = await fetch(GRAPHQL_ENDPOINT, {
@@ -52,7 +52,7 @@ async function loadBooks() {
 //Handle "View Stored Books" button click
 viewBooksBtn.addEventListener('click', loadBooks);
 
-// ✏️ Handle form submission
+//Handle form submission
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
 
@@ -60,7 +60,7 @@ form.addEventListener('submit', async (e) => {
   const bookTitle = document.getElementById('bookTitle').value.trim();
 
   try {
-    // 🔍 Check if author exists
+    //Check if author exists
     const checkAuthorRes = await fetch(GRAPHQL_ENDPOINT, {
       method: 'POST',
       headers: {
@@ -121,7 +121,7 @@ form.addEventListener('submit', async (e) => {
       }
     }
 
-    // 📘 Insert book
+    //Insert book
     const insertBookRes = await fetch(GRAPHQL_ENDPOINT, {
       method: 'POST',
       headers: {
@@ -153,7 +153,7 @@ form.addEventListener('submit', async (e) => {
 
     responseBox.textContent = `✅ Book "${bookTitle}" by "${authorName}" added successfully!`;
     form.reset();
-    loadBooks(); // 🔄 Refresh list after adding
+    loadBooks();
   } catch (err) {
     responseBox.textContent = `❌ Error: ${err.message}`;
   }
