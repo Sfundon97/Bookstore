@@ -49,7 +49,7 @@ async function loadBooks() {
   }
 }
 
-// 📖 Handle "View Stored Books" button click
+//Handle "View Stored Books" button click
 viewBooksBtn.addEventListener('click', loadBooks);
 
 // ✏️ Handle form submission
