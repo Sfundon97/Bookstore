@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Book Manager</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('https://images.unsplash.com/photo-1512820790803-83ca734da794') no-repeat center center fixed;
+      background-size: cover;
+      margin: 0;
+      padding: 2rem;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 2rem;
+      border-radius: 12px;
+      max-width: 700px;
+      width: 100%;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    h2 {
+      color: #4a3fbb;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+   form {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* This centers the form elements */
+}
+
+input[type="text"],
+input[type="file"] {
+  width: 90%; /* Adjust width as needed */
+  max-width: 400px;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+
+    button {
+      background-color: #7353be;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+      display: block;
+      margin: 0 auto;
+    }
+
+    button:hover {
+      background-color: #5e40aa;
+    }
+
+    #response {
+      background-color: #eef0ff;
+      border-left: 4px solid #7353be;
+      padding: 1rem;
+      border-radius: 6px;
+      font-family: monospace;
+      white-space: pre-wrap;
+      margin-bottom: 2rem;
+    }
+
+    #bookList {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    #bookList li {
+      background-color: #fff;
+      padding: 1rem;
+      margin-bottom: 0.5rem;
+      border-radius: 6px;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+    }
+  </style>
+</head>
+<body>
+  
+
+  <div class="container">
+    <h2>Add a Book</h2>
+    <p style="text-align: center; max-width: 600px; margin: 0 auto 2rem; font-size: 1.1rem;">
+  Welcome to the <strong>Book Manager</strong>! Use the form below to upload books by entering the author's name, the book title, and selecting the file. Once uploaded, you can view all stored books by clicking the "View Stored Books" button and download any book you might be interested in.
+</p>
+    <form id="bookForm">
+      <input type="text" id="authorName" placeholder="Author Name" required />
+      <input type="text" id="bookTitle" placeholder="Book Title" required />
+      <input type="file" id="bookFile" accept=".pdf,.epub,.docx" required />
+      <button type="submit">Upload</button>
+    </form>
+
+    <button type="button" id="viewBooksBtn">View Stored Books</button>
+
+    <pre id="response"></pre>
+
+    <h2>Book List</h2>
+    <ul id="bookList"></ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
