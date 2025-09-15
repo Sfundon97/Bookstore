@@ -4,19 +4,83 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Book Upload</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+      background: #f9f9f9;
+      color: #333;
+    }
+    h1 {
+      color: #7353be;
+    }
+    form {
+      margin-bottom: 20px;
+      background: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    input {
+      width: 100%;
+      max-width: 400px;
+      padding: 8px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      background: #7353be;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #5a3fa0;
+    }
+    #response {
+      margin: 15px 0;
+      font-weight: bold;
+    }
+    #bookList {
+      margin-top: 20px;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      background: #fff;
+    }
+    th, td {
+      padding: 10px;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+    th {
+      background: #7353be;
+      color: white;
+    }
+  </style>
 </head>
 <body>
   <h1>📚 Upload a Book</h1>
 
   <form id="bookForm">
-    <label for="authorName">Author Name:</label><br>
-    <input type="text" id="authorName" name="authorName" required /><br><br>
+    <label for="authorName">Author Name:</label>
+    <input type="text" id="authorName" name="authorName" required />
 
-    <label for="bookTitle">Book Title:</label><br>
-    <input type="text" id="bookTitle" name="bookTitle" required /><br><br>
+    <label for="bookTitle">Book Title:</label>
+    <input type="text" id="bookTitle" name="bookTitle" required />
 
-    <label for="bookFile">Upload File:</label><br>
-    <input type="file" id="bookFile" name="bookFile" required /><br><br>
+    <label for="bookFile">Upload File:</label>
+    <input type="file" id="bookFile" name="bookFile" required />
 
     <button type="submit">Upload Book</button>
   </form>
@@ -24,6 +88,7 @@
   <button id="viewBooksBtn">📖 View Stored Books</button>
   <div id="response"></div>
   <div id="bookList"></div>
+
   <script src="script.js"></script>
 </body>
 </html>
