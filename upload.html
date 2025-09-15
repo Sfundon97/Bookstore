@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Book Upload</title>
+</head>
+<body>
+  <h1>📚 Upload a Book</h1>
+
+  <form id="bookForm">
+    <label for="authorName">Author Name:</label><br>
+    <input type="text" id="authorName" name="authorName" required /><br><br>
+
+    <label for="bookTitle">Book Title:</label><br>
+    <input type="text" id="bookTitle" name="bookTitle" required /><br><br>
+
+    <label for="bookFile">Upload File:</label><br>
+    <input type="file" id="bookFile" name="bookFile" required /><br><br>
+
+    <button type="submit">Upload Book</button>
+  </form>
+
+  <button id="viewBooksBtn">📖 View Stored Books</button>
+  <div id="response"></div>
+  <div id="bookList"></div>
+</body>
+</html>
